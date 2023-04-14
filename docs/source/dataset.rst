@@ -16,6 +16,93 @@ To import the module
 API
 ---
 
+FTP_download_lasfile
+~~~~~~~~~~~~~~~~~~~~
+
+.. function:: FTP_download_lasfile(filename, datayear=2017, folderpath="FTP_files/") -> None
+
+   Downloads a las file from ftp.gis.ny.gov.
+
+   :param filename: The name of the las file to download from the FTP server.
+   :type filename: str
+   :param datayear: The year of the data (2017 or 2021). Defaults to 2017.
+   :type datayear: int
+   :param folderpath: The path to the folder where the file should be downloaded. Defaults to "FTP_files/".
+   :type folderpath: str
+
+   :returns: None.
+
+Example Usage
+-------------
+
+Here is an example usage of the `FTP_download_lasfile` function:
+
+.. code-block:: python
+
+   import terravide.src.dataset as dataset
+
+   filename = "myfile.las"
+   datayear = 2017
+   folderpath = "/path/to/my/folder/"
+   dataset.FTP_download_lasfile(filename, datayear, folderpath)
+
+This will download the specified las file from the FTP server and save it to the folder located at `folderpath/NYC_2017/`, or `folderpath/NYC_2021/` if `datayear` is set to 2021.
+
+
+FTP_GetFileList
+~~~~~~~~~~~~~~~
+
+.. function:: FTP_GetFileList(datayear=2017) -> list
+
+   Gets a list of all files in the FTP directory of NYC scans for the specified year.
+
+   :param datayear: The year of the data (2017 or 2021). Defaults to 2017.
+   :type datayear: int
+
+   :returns: A list of filenames in the FTP server.
+
+Example Usage
+-------------
+
+Here is an example usage of the `FTP_GetFileList` function:
+
+.. code-block:: python
+
+   import terravide.src.dataset as dataset
+
+   datayear = 2017
+   filenames = dataset.FTP_GetFileList(datayear)
+   print(filenames)
+
+This will print a list of all files in the FTP directory of NYC scans for the year 2017.
+
+
+FTP_list_files
+~~~~~~~~~~~~~~
+
+.. function:: FTP_list_files(datayear=2021) -> None
+
+   Lists all files in the lidar directory of NYC scans for the specified year.
+
+   :param datayear: The year of the data (2017 or 2021). Defaults to 2021.
+   :type datayear: int
+
+   :returns: Prints to console.
+
+Example Usage
+-------------
+
+Here is an example usage of the `FTP_list_files` function:
+
+.. code-block:: python
+
+   import terravide.src.dataset as dataset
+
+   datayear = 2021
+   dataset.FTP_list_files(datayear)
+
+This will list all files in the lidar directory of NYC scans for the year 2021.
+
 Get_filenames
 ~~~~~~~~~~~~~
 
@@ -29,8 +116,6 @@ Get_filenames
    :type year: int
 
    :returns: A list of filenames in the specified folder.
-
-Usage
 
 Here is an example usage of the `Get_filenames` function:
 
@@ -56,8 +141,6 @@ Delete_File
    :type file_path: str
 
    :returns: None
-
-Usage
 
 Here is an example usage of the `Delete_File` function:
 

@@ -62,6 +62,14 @@ def FTP_download_lasfile(filename, datayear=2017, folderpath="FTP_files/"):
     return None
 
 def FTP_GetFileList(datayear=2017):
+    """Get list of all files in the lidar directory of NYC scans
+
+    Args:
+        datayear (int, optional): _description_. Defaults to 2017.
+
+    Returns:
+        _type_: filenames in the FTP server as a list
+    """    
 
     assert datayear in [2017,2021], "NYC recorded lidar data only during 2017 and 2021, default is 2021"
 
@@ -85,13 +93,13 @@ def FTP_GetFileList(datayear=2017):
     return filenames
 
 def FTP_list_files(datayear=2021):
-    """List all files in the lidar directory of NYC scans
+    """List all files in the FTP directory of NYC scans
 
     Args:
         datayear (int, optional): _description_. Defaults to 2021.
 
     Returns:
-        None: _description_
+        None: prints to console
     """
 
     assert datayear in [2017,2021], "NYC recorded lidar data only during 2017 and 2021, default is 2021"
