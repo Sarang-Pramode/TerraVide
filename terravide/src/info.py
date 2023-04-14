@@ -39,3 +39,8 @@ def license():
 def author():
     print('''
     Author :  Sarang Pramode''')
+
+if __name__ == '__main__':
+    about()
+    license()
+    author()
