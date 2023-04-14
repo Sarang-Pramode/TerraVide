@@ -9,7 +9,7 @@ from os import path
 #    FTP functions
 ########################################################################################################
 
-def FTP_download_lasfile(filename, datayear=2017, folderpath="testD/"):
+def FTP_download_lasfile(filename, datayear=2017, folderpath="FTP_files/"):
     """Downlaod a las file from ftp.gis.ny.gov
 
     Args:
@@ -84,7 +84,7 @@ def FTP_GetFileList(datayear=2017):
     filenames = ftp.nlst() # get filenames within the directory
     return filenames
 
-def FTP_list_files(datayear=2017):
+def FTP_list_files(datayear=2021):
     """List all files in the lidar directory of NYC scans
 
     Args:
@@ -122,8 +122,14 @@ if __name__ == '__main__':
     year = int(input("Enter Desired YEAR [2017 and 2021 supported] : "))
     # Get List of filnames on FTP server
     filenames = FTP_GetFileList(year)
+
     # Prepare arguments
-    args = [(i, year,DEFAULT_FOLDER_PATH) for i in filenames]
+
+    #Download all files
+    #NOTE: This is a very slow process, use only if you want to download all files
+    #args = [(i, year,DEFAULT_FOLDER_PATH) for i in filenames]
+
+    #Download a single file
     args = [('25192.las', year,DEFAULT_FOLDER_PATH)]
 
     print("-------------------------")
