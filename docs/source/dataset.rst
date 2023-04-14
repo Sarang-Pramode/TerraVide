@@ -13,6 +13,18 @@ To import the module
 
     import terravide.src.dataset as dataset
 
+Module Dependencies
+-------------------
+
+The `terrvide.src.dataset` module has the following dependencies:
+
+* :mod:`multiprocessing.Pool`
+* :mod:`ftplib.FTP`
+* :mod:`os`
+* :mod:`os.path`
+
+These modules must be imported before using the functions in this module.
+
 API
 ---
 
@@ -32,8 +44,6 @@ FTP_download_lasfile
 
    :returns: None.
 
-Example Usage
--------------
 
 Here is an example usage of the `FTP_download_lasfile` function:
 
@@ -61,8 +71,6 @@ FTP_GetFileList
 
    :returns: A list of filenames in the FTP server.
 
-Example Usage
--------------
 
 Here is an example usage of the `FTP_GetFileList` function:
 
@@ -89,8 +97,6 @@ FTP_list_files
 
    :returns: Prints to console.
 
-Example Usage
--------------
 
 Here is an example usage of the `FTP_list_files` function:
 
