@@ -7,9 +7,6 @@ It prepares the data to be used by the other modules
 
 The data is downloaded from the FTP server and stored in a local directory
 
-Usage
------
-
 To import the module
 
 .. code-block:: python
@@ -34,7 +31,6 @@ Get_filenames
    :returns: A list of filenames in the specified folder.
 
 Usage
------
 
 Here is an example usage of the `Get_filenames` function:
 
@@ -62,7 +58,6 @@ Delete_File
    :returns: None
 
 Usage
------
 
 Here is an example usage of the `Delete_File` function:
 
