@@ -50,7 +50,8 @@ TerraVide is released under the MIT license.
 Contents
 --------
 
-.. toctree::
+.. toctree:: 
 
    dataset
    ground
+   preprocess
