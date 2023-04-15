@@ -18,8 +18,12 @@ The `GroundClassification` module has the following dependencies:
 
 These modules must be installed before using the functions in this module.
 
+
+API
+---
+
 GP Class
---------------
+~~~~~~~~
 
 .. autoclass:: GroundClassification.GP_class
    :members:
@@ -36,8 +40,6 @@ GP Class
       :type lidarSubtilePoints: numpy array
       :returns: Two numpy arrays: `Ground_Points` containing classified ground points and `Not_ground_points` containing non ground points.
    
-Example usage
--------------
    
 Here is an example of how to use the `GP_class` class:
 
