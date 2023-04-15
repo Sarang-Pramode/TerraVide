@@ -23,7 +23,7 @@ The `terrvide.src.dataset` module has the following dependencies:
 * :mod:`os`
 * :mod:`os.path`
 
-These modules must be imported before using the functions in this module.
+These modules must be installed before using the functions in this module.
 
 API
 ---

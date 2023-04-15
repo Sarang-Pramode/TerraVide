@@ -62,7 +62,7 @@ def FTP_download_lasfile(filename, datayear=2017, folderpath="FTP_files/"):
     return None
 
 def FTP_GetFileList(datayear=2017):
-    """Get list of all files in the lidar directory of NYC scans
+    """Get list of all files in the FTP directory of NYC scans
 
     Args:
         datayear (int, optional): _description_. Defaults to 2017.
