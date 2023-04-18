@@ -156,16 +156,19 @@ LasTile Class
    Class methods:
 
 .. function:: Get_TileBounds()
+
       Get bounding values of tiles.
 
       :returns: A tuple `(X_max, X_min, Y_max, Y_min)` containing the maximum and minimum values of X and Y coordinates.
 
 .. function:: Get_SubTileDimensions()
+
       Get the dimensions of the subtiles.
 
       :returns: A tuple `(X_div_len, Y_div_len)` containing the length and breadth of subtiles.
 
 .. function:: Get_subtile(X_div_len, Y_div_len, row_ID, col_ID)
+
       Get X, Y, Z points of specific lidar tile.
 
       :param X_div_len: The length of the subtile.
@@ -183,6 +186,7 @@ LasTile Class
       :returns: A slice of the lidar_Dataframe.
 
 .. function:: Get_subtileArray()
+
       Return a 2D matrix buffer of lidar subtiles indexed by row and column.
 
       :returns: A 2D numpy array of size Nx3.
