@@ -25,15 +25,13 @@ API
 GP Class
 ~~~~~~~~
 
-.. autoclass:: GroundClassification.GP_class
-   :members:
-   :undoc-members:
+.. class:: GroundClassification.GP_class
 
    The GP class provides methods for ground plane classification using LiDAR point cloud data. The constructor takes one argument, `ground_H_thresh_perc`, which is the height threshold of the region to look at from the lowest point in the tileset. The default value is 0.1.
 
    The class provides the following method:
 
-   Extract_GroundPoints(lidarSubtilePoints)
+.. function:: Extract_GroundPoints(lidarSubtilePoints)
       Extract ground points from a tile points.
 
       :param lidarSubtilePoints: Numpy array of size Nx3 containing the coordinates of LiDAR points.
