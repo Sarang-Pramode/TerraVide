@@ -122,7 +122,7 @@ Get_SRpoints
 
 
 LasTile Class
--------------
+~~~~~~~~~~~~~
 
 .. autoclass:: PreProcessing.lasTile
    :members:
@@ -188,6 +188,33 @@ LasTile Class
       Return a 2D matrix buffer of lidar subtiles indexed by row and column.
 
       :returns: A 2D numpy array of size Nx3.
+
+Here is an example usage of the `lasTile` class:
+
+
+.. code-block:: python
+
+   import pandas as pd
+   from terravide.src.PreProcessing import lasTile
+
+   # Load the LiDAR data into a Pandas DataFrame
+   df = pd.read_csv('lidar_data.csv')
+
+   # Create an instance of the lasTile class
+   tile = lasTile(df, TileDivision=10)
+
+   # Get the bounding values of the tiles
+   X_max, X_min, Y_max, Y_min = tile.Get_TileBounds()
+
+   # Get the dimensions of the subtiles
+   X_div_len, Y_div_len = tile.Get_SubTileDimensions()
+
+   # Get a subtile of the LiDAR data
+   subtile_df = tile.Get_subtile(X_div_len, Y_div_len, row_ID=0, col_ID=0)
+
+   # Get a matrix buffer of the LiDAR subtiles
+   matrix_buffer = tile.Get_subtileArray()
+
 
 
 
