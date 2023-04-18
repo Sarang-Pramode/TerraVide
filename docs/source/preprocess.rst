@@ -113,7 +113,7 @@ Get_SRpoints
 
 .. function:: Get_SRpoints(lidar_Dataframe: pd.DataFrame) -> pd.DataFrame
 
-   Filter Single Return points from a lidar data frame.
+   Filter Single Return points from a lidar data frame and return a new data frame.
 
    :param lidar_Dataframe: Pandas DataFrame of lidar points as well as return number and number of returns for each data point.
    :type lidar_Dataframe: pandas DataFrame
