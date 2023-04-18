@@ -46,7 +46,7 @@ Here is an example of how to use the `GP_class` class:
 .. code-block:: python
 
    import numpy as np
-   from GroundClassification import GP_class as GP
+   from terravide.src.GroundClassification import GP_class as GP
    
    # Create an instance of the GP_class
    gp = GP(ground_H_thresh_perc=0.2)

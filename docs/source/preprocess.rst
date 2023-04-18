@@ -14,9 +14,9 @@ Module Dependencies
 
 The PreProcessing module has the following dependencies:
 
-:mod:laspy
-:mod:numpy
-:mod:pandas
+* :mod:`numpy`
+* :mod:`pandas`
+* :mod:`laspy`
 
 These modules must be installed before using the functions in this module.
 
@@ -107,4 +107,88 @@ Here is an example usage of the `Get_MRpoints` function:
 
    # Print the filtered DataFrame
    print(filtered_df)
+
+Get_SRpoints
+~~~~~~~~~~~~
+
+.. function:: Get_SRpoints(lidar_Dataframe: pd.DataFrame) -> pd.DataFrame
+
+   Filter Single Return points from a lidar data frame.
+
+   :param lidar_Dataframe: Pandas DataFrame of lidar points as well as return number and number of returns for each data point.
+   :type lidar_Dataframe: pandas DataFrame
+
+   :returns: Filtered points with number of returns = 1 as a pandas DataFrame.
+
+
+LasTile Class
+-------------
+
+.. autoclass:: PreProcessing.lasTile
+   :members:
+   :undoc-members:
+
+   The `lasTile` class provides methods for preprocessing and dividing a LiDAR point cloud data tile into sub-tiles. The constructor takes two arguments: 
+   
+   `LiDAR_Dataframe`: A Pandas Dataframe object containing the LiDAR point cloud data.
+   
+   `TileDivision`: An integer specifying the number of divisions to divide the tile into. The default value is 1, which means the tile is not divided.
+
+   Class attributes:
+   
+    lidar_Dataframe : Pandas DataFrame
+      A Pandas Dataframe object containing the LiDAR point cloud data.
+      
+    TileDivision : int
+      An integer specifying the number of divisions to divide the tile into. The default value is 1, which means the tile is not divided.
+   
+    rows : int
+      The number of rows in the `Matrix_Buffer` 2D array.
+   
+    cols : int
+      The number of columns in the `Matrix_Buffer` 2D array.
+   
+    Matrix_Buffer : 2D list
+      A 2D list of `lasTile` objects representing the sub-tiles of the tile.
+      
+    Matrix_BufferFilled : bool
+      A boolean indicating whether the `Matrix_Buffer` 2D list has been filled with `lasTile` objects representing the sub-tiles of the tile. The default value is False.
+
+
+   Class methods:
+
+    Get_TileBounds()
+      Get bounding values of tiles.
+
+      :returns: A tuple `(X_max, X_min, Y_max, Y_min)` containing the maximum and minimum values of X and Y coordinates.
+
+   Get_SubTileDimensions()
+      Get the dimensions of the subtiles.
+
+      :returns: A tuple `(X_div_len, Y_div_len)` containing the length and breadth of subtiles.
+
+   Get_subtile(X_div_len, Y_div_len, row_ID, col_ID)
+      Get X, Y, Z points of specific lidar tile.
+
+      :param X_div_len: The length of the subtile.
+      :type X_div_len: int
+
+      :param Y_div_len: The breadth of the subtile.
+      :type Y_div_len: int
+
+      :param row_ID: The row index of the subtile in the tile matrix.
+      :type row_ID: int
+
+      :param col_ID: The column index of the subtile in the tile matrix.
+      :type col_ID: int
+
+      :returns: A slice of the lidar_Dataframe.
+
+   Get_subtileArray()
+      Return a 2D matrix buffer of lidar subtiles indexed by row and column.
+
+      :returns: A 2D numpy array of size Nx3.
+
+
+
 
