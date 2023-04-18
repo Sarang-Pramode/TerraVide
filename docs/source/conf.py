@@ -6,8 +6,8 @@ project = 'TerraVide'
 copyright = '2023 Sarang Pramode'
 author = 'Sarang Pramode'
 
-release = '0.3'
-version = '0.3.0'
+release = '0.4'
+version = '0.4.0'
 
 # -- General configuration
 
