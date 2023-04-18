@@ -108,18 +108,6 @@ Here is an example usage of the `Get_MRpoints` function:
    # Print the filtered DataFrame
    print(filtered_df)
 
-Get_SRpoints
-~~~~~~~~~~~~
-
-.. function:: Get_SRpoints(lidar_Dataframe: pd.DataFrame) -> pd.DataFrame
-
-   Filter Single Return points from a lidar data frame and return a new data frame.
-
-   :param lidar_Dataframe: Pandas DataFrame of lidar points as well as return number and number of returns for each data point.
-   :type lidar_Dataframe: pandas DataFrame
-
-   :returns: Filtered points with number of returns = 1 as a pandas DataFrame.
-
 
 LasTile Class
 ~~~~~~~~~~~~~
